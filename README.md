@@ -10,7 +10,7 @@
 
 This is a learning project, built progressively from bare startup code up to a full FreeRTOS pipeline. Each stage is finished and verified before the next one starts.
 
-I built this to actually understand what happens below the HAL. Most STM32 tutorials hand you CubeMX and call it a day — which is fine for shipping products, but doesn't teach you why the clock tree works the way it does, or what DMA is really doing.
+I built this to bridge the gap between theory and practice. While university courses provide the fundamentals of microcontrollers and tools like STM32CubeMX, there is often a "missing link" between high-level configuration and the actual hardware behavior. This project is my way of connecting those dots by implementing the system at the register level.
 
 The system acquires analog signals via ADC, processes them in separate RTOS tasks, and sends results over UART — without the CPU ever blocking or polling.
 
