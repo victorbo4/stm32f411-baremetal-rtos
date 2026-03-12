@@ -1,0 +1,27 @@
+# --- Binaries and objects ---
+build/
+obj/
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.d
+
+# --- References ---
+docs/
+
+
+# --- Logs and Debug ---
+*.log
+.gdb_history
+.openocd_log
+
+# --- Misc ---
+.vscode/
+.idea/
+.settings/
+.project
+.cproject
+*~
+*.swp
