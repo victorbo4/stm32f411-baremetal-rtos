@@ -173,9 +173,14 @@ x/wx 0x40023808   # RCC_CFGR    → bits 2:3 (SWS) should read 0b10 (PLL)
 
 ## References
 
-- STM32F411 Reference Manual (RM0383)
-- STM32F411 Datasheet
-- ARM Cortex-M4 Technical Reference Manual
-- FreeRTOS Documentation
-- MISRA-C:2012 Guidelines
+### Hardware Documentation
+- [STM32F411xC/E Reference Manual (RM0383)](https://www.st.com/resource/en/reference_manual/rm0383-stm32f411xce-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
+- [STM32F411xC/E Datasheet](https://www.st.com/resource/en/datasheet/stm32f411ce.pdf)
+- [STM32F411E-DISCO User Manual (UM1842)](https://www.st.com/resource/en/user_manual/um1842-discovery-kit-with-stm32f411ve-mcu-stmicroelectronics.pdf)
+- [STM32 Cortex-M4 Programming Manual (PM0214)](https://www.st.com/resource/en/programming_manual/pm0214-stm32-cortexm4-mcus-and-mpus-programming-manual-stmicroelectronics.pdf)
+
+### Software & Standards
+- [ARM Cortex-M4 Technical Reference Manual](https://developer.arm.com/documentation/100166/latest/)
+- [FreeRTOS Real Time Kernel Documentation](https://www.freertos.org/Documentation/RTOS_book.html)
+- [MISRA-C:2012 Guidelines](https://www.misra.org.uk/)
 
