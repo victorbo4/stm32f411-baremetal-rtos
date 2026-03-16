@@ -56,6 +56,7 @@ Timer Trigger → ADC + DMA → FreeRTOS Queue → Processing Task → UART DMA 
 ```
 /core
     startup.c           # Vector table, .data/.bss init, stack setup
+    memory.ld           # Linker script, Flash/SRAM layout, section mapping
     system_clock.c      # PLL configuration, RCC registers
 
 /drivers
@@ -89,6 +90,7 @@ Each level is independently testable. I don't move forward until GDB confirms th
 - `.data` copy from flash, `.bss` zero-fill
 - Stack pointer setup
 - **Goal:** `main()` runs with zero runtime dependencies
+- [notes/level0.md](notes/level0.md)
 
 ### 🔄  Level 1 — Clock system
 - HSI → PLL → SYSCLK at 96 MHz
@@ -143,10 +145,11 @@ I follow MISRA-C mandatory rules as a way to catch classes of bugs early. The ma
 - No function-like macros where an `inline` function works
 - Functions do one thing
 - Global variables only when genuinely necessary
+- **Documented deviations** — hardware-specific code (vector tables, memory-mapped register casting) is treated as a justified deviation, not suppressed silently.
 
 Checked with cppcheck:
 ```bash
-cppcheck --addon=misra.py src/
+cppcheck --inline-suppr --addon=misra --std=c99 core/ app/ drivers/
 ```
 
 ---
