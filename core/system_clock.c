@@ -1,29 +1,7 @@
 #include "system_clock.h"
+#include "board_config.h"
 #include <stdint.h>
 
-/* ========================================================================== */
-/* MISRA-C Deviations Documented                                              */
-/* ========================================================================== */
-/* * Rule 11.4 & Rule 11.6: Casting between a pointer to object and an integer.
- * Justification: Memory-mapped hardware registers in embedded systems require 
- * casting fixed physical integer addresses to volatile pointers. This is 
- * standard practice in bare-metal C and cannot be avoided.
- */
-
-/* ========================================================================== */
-/* Memory Map & Base Addresses (RM0383 Section 2.3)                           */
-/* ========================================================================== */
-#define RCC_BASE            0x40023800U
-#define FLASH_BASE          0x40023C00U
-
-/* ========================================================================== */
-/* Register Definitions                                                       */
-/* ========================================================================== */
-#define RCC_CR              (*(volatile uint32_t *)(RCC_BASE + 0x00U))
-#define RCC_PLLCFGR         (*(volatile uint32_t *)(RCC_BASE + 0x04U))
-#define RCC_CFGR            (*(volatile uint32_t *)(RCC_BASE + 0x08U))
-
-#define FLASH_ACR           (*(volatile uint32_t *)(FLASH_BASE + 0x00U))
 
 /* ========================================================================== */
 /* Clock Configuration Constants (Target: 96 MHz from 16 MHz HSI)             */

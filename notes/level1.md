@@ -194,3 +194,15 @@ Safety: This ensures the APB1 bus runs at 48 MHz, staying below the 50 MHz hardw
 
 ---
 
+## MISRA-C:2012 Compliance Summary
+
+The following deviations are intentional and required for bare-metal operation:
+
+| Rule | Description | Justification |
+| :--- | :--- | :--- |
+| **11.4 / 11.6** | Integer to pointer conversion | Required to access Memory Mapped I/O (MMIO) registers (RCC, Flash). |
+| **8.11** | External arrays with incomplete type | Required to access Linker Script symbols (`_sdata`, `_sbss`, etc.). |
+| **12.2** | Shift count and value types | Used explicitly for bitmask clarity in register configuration. |
+| **8.7** | External linkage | `Reset_Handler` and global variables must be visible to the hardware/linker. |
+
+

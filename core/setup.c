@@ -60,7 +60,6 @@ uint32_t *vectors[] = {
     /* SVCall, PendSV, SysTick, and external IRQs (TIM, UART, SPI, ...)   */
 };
 
-
 void Reset_Handler(void)
 {
     /* ------------------------------------------------------------------ */
@@ -70,7 +69,7 @@ void Reset_Handler(void)
     /*    _edata  : destination end   in RAM                               */
     /* ------------------------------------------------------------------ */
 
-    uint32_t *pSrc = _sidata;  /* read from Flash */
+    const uint32_t *pSrc = _sidata;  /* read from Flash */
     uint32_t *pDst = _sdata;   /* write to RAM    */
 
     /* cppcheck-suppress comparePointers */
@@ -106,7 +105,7 @@ void Reset_Handler(void)
     /* ------------------------------------------------------------------ */
     /* 3. Hand off to the application                                      */
     /* ------------------------------------------------------------------ */
-    main();
+    (void)main();
 
     /* main() should never return on embedded targets.                     */
     /* If it does (e.g. during debugging), trap here to avoid undefined    */

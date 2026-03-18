@@ -14,7 +14,7 @@ MCU_FLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
 # Compilation Flags
 # -nostartfiles: Tells GCC not to use standard startup files (using our setup.c)
 # -ffreestanding: Informs the compiler that the standard library may not be present
-CFLAGS  = $(MCU_FLAGS) -ffreestanding -nostartfiles -Wall -Wextra -O0 -g3 -I. -Icore
+CFLAGS  = $(MCU_FLAGS) -ffreestanding -nostartfiles -Wall -Wextra -O0 -g3 -I. -Icore -Iplatform
 
 # Linker Flags
 # -T: Specifies the path to our custom linker script
