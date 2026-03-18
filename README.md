@@ -92,7 +92,7 @@ Each level is independently testable. I don't move forward until GDB confirms th
 - **Goal:** `main()` runs with zero runtime dependencies
 - [notes/level0.md](notes/level0.md)
 
-### 🔄  Level 1 — Clock system
+### ✅ Level 1 — Clock system
 - HSI → PLL → SYSCLK at 96 MHz
 - PLLM / PLLN / PLLP / PLLQ calculated by hand from the clock tree
 - AHB / APB prescalers configured
