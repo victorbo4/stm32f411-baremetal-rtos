@@ -97,6 +97,7 @@ Each level is independently testable. I don't move forward until GDB confirms th
 - PLLM / PLLN / PLLP / PLLQ calculated by hand from the clock tree
 - AHB / APB prescalers configured
 - Verified via GDB: `RCC_CR`, `RCC_PLLCFGR`, `RCC_CFGR`
+- [notes/level1.md](notes/level1.md)
 
 ### ⬜  Level 2 — GPIO driver
 - `gpio_init()`, `gpio_set()`, `gpio_toggle()`

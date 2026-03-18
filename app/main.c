@@ -1,3 +1,4 @@
+#include "system_clock.h"
 #include <stdint.h>
 
 /* Use explicit 'U' suffix for unsigned constants (MISRA compliance) */
@@ -14,6 +15,9 @@ int main(void)
 {
     /* If we reach here, the stack pointer is already pointing to RAM */
     /* and both .data and .bss have been correctly initialized        */
+
+    /* Initialize the system clock at 96 MHz */
+    system_clock_init();
 
     for (;;)
     {

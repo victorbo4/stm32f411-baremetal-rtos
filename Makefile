@@ -14,14 +14,16 @@ MCU_FLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
 # Compilation Flags
 # -nostartfiles: Tells GCC not to use standard startup files (using our setup.c)
 # -ffreestanding: Informs the compiler that the standard library may not be present
-CFLAGS  = $(MCU_FLAGS) -ffreestanding -nostartfiles -Wall -Wextra -O0 -g3 -I.
+CFLAGS  = $(MCU_FLAGS) -ffreestanding -nostartfiles -Wall -Wextra -O0 -g3 -I. -Icore
 
 # Linker Flags
 # -T: Specifies the path to our custom linker script
 LDFLAGS = -T core/memory.ld -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
 
 # Source files
-SRCS = core/setup.c app/main.c
+SRCS = core/setup.c \
+	   core/system_clock.c \
+	   app/main.c 
 
 # Object files (placed inside build/ directory)
 OBJS = $(patsubst %.c, $(BUILD_DIR)/%.o, $(SRCS))
